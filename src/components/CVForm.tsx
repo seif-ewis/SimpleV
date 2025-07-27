@@ -44,7 +44,7 @@ export default function CVForm() {
   const prevStep = () => setCurrentStep(prev => (prev > 1 ? prev - 1 : prev));
 
   // ... (All data handler functions remain the same)
-  const handleInputChange = (section: keyof CVData, field: string, value: any) => { setCvData(prevData => { if (section === 'personalInfo') { return { ...prevData, personalInfo: { ...prevData.personalInfo, [field]: value }}; } return { ...prevData, [section]: value }; }); };
+  const handleInputChange = (section: keyof CVData, field: string, value: string | string[]) => { setCvData(prevData => { if (section === 'personalInfo') { return { ...prevData, personalInfo: { ...prevData.personalInfo, [field]: value }}; } return { ...prevData, [section]: value }; }); };
   const handleExperienceChange = (id: string, e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => { const { name, value } = e.target; setCvData(prevData => ({ ...prevData, experience: prevData.experience.map(exp => exp.id === id ? { ...exp, [name]: value } : exp) })); };
   const addExperience = () => { setCvData(prev => ({ ...prev, experience: [...prev.experience, { id: uuidv4(), jobTitle: '', company: '', startDate: '', endDate: '', responsibilities: '' }]})); };
   const removeExperience = (id: string) => { setCvData(prev => ({ ...prev, experience: prev.experience.filter(exp => exp.id !== id) })); };

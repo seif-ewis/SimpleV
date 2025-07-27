@@ -14,8 +14,7 @@ export default function Step2({ data, handleChange, addExperience, removeExperie
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Work Experience</h2>
-      {data.map((exp, index) => (
-        <div key={exp.id} className="mb-8 p-4 border rounded-md relative">
+      {data.map((exp) => (        <div key={exp.id} className="mb-8 p-4 border rounded-md relative">
           {data.length > 1 && (
             <button
               onClick={() => removeExperience(exp.id)}

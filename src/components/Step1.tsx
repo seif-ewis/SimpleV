@@ -48,8 +48,8 @@ export default function Step1({ data, handleChange }: Step1Props) {
       <h2 className="text-2xl font-semibold mb-6 text-gray-800">Career Objective</h2>
       <div>
         <label htmlFor="careerObjective" className="block text-sm font-medium text-gray-700">
-          Briefly describe your career goal or what you're looking for.
-        </label>
+  Briefly describe your career goal or what you&apos;re looking for.
+</label>
         <textarea
           name="careerObjective"
           id="careerObjective"
